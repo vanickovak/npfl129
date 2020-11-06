@@ -28,7 +28,7 @@ def main(args):
     # Use `sklearn.model_selection.train_test_split` method call, passing
     # arguments `test_size=args.test_size, random_state=args.seed`.
     data_target= np.column_stack((data_bias, dataset.target))
-    train_test_split= sklearn.model_selection.train_test_split(data_target, test_size=0.9,random_state=args.seed)
+    train_test_split= sklearn.model_selection.train_test_split(data_target, test_size=args.test_size,random_state=args.seed)
     train= train_test_split[0]
     print(train.shape)
     train_target= np.hsplit(train,15)[14]
